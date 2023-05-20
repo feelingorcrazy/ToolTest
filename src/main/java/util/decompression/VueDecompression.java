@@ -14,19 +14,12 @@ import java.util.zip.ZipInputStream;
  * @date 2023/5/17
  */
 public class VueDecompression {
+	public static String path = "";
 	public static void out(File file, String outPath) throws IOException {
 		InputStream is = new FileInputStream(file);
 		File file1 = new File(outPath);
 		file1.mkdirs();
-		File[] files = file1.listFiles();
-		for (File f : files) {
-			if (f.isDirectory()) {
-				f.mkdir();
-				outPath = outPath + "/" + f.getName();
-			}
-		}
-
-		FileUtil.writeFile(is, outPath + "/" +file.getName());
+		FileUtil.writeFile(is, path + "/" +file.getName());
 		is.close();
 		System.out.println("vue移动成功");
 	}

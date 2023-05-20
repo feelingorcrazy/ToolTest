@@ -53,7 +53,7 @@ public class JavaDecompression {
 
 		file1 = new File(PathProperties.get("vue") +"/"+ StrUtil.toUnderlineCase(entityName.replace("Rc","" )));
 		file1.mkdirs();
-
+		VueDecompression.path = PathProperties.get("vue") +"/"+ StrUtil.toUnderlineCase(entityName.replace("Rc","" ));
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		File outFile = new File(outPath + "/" + file.getName());
 		FileWriter fileWriter = new FileWriter(outFile);
